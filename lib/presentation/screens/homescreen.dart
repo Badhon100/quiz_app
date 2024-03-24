@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:quiz_app/data/providers/question_answer_provider.dart';
+
 import 'package:quiz_app/presentation/const/color_const.dart';
 import 'package:quiz_app/presentation/const/image_const.dart';
+import 'package:quiz_app/presentation/widgets/custom_button_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -49,21 +53,19 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              height: 40.h,
-              width: 300.w,
-              decoration: BoxDecoration(
-                color: ColorConst.startButtonColor,
-                borderRadius: BorderRadius.circular(20.r),
-              ),
-              child: Center(
-                child: Text(
-                  "Start",
-                  style:
-                      TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w500),
+            Consumer<QuestionAnswerProvider>(
+                builder: (context, questionAnswerProvider, _) {
+              return InkWell(
+                onTap: () {
+                  questionAnswerProvider.fetchQuestions();
+                  Navigator.pushNamed(context, '/question_answer_screen');
+                },
+                child: CustomButtonWidget(
+                  backgroundColor: ColorConst.startButtonColor,
+                  name: "Start",
                 ),
-              ),
-            ),
+              );
+            }),
           ],
         ),
       ),
