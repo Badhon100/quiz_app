@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:quiz_app/presentation/screens/homescreen.dart';
+import 'package:quiz_app/routes/generated_routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  MyApp({super.key});
+  final AppRoute _appRoute = AppRoute();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
             useMaterial3: true,
           ),
-          home: const HomeScreen(),
+          onGenerateRoute: _appRoute.onGenerateRoute,
         );
       },
     );
