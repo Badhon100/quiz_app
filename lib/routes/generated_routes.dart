@@ -7,7 +7,7 @@ class AppRoute {
     switch (routeSettings.name) {
       case '/':
         return MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
+          builder: (_) => HomeScreen(),
         );
       case '/question_answer_screen':
         return MaterialPageRoute(

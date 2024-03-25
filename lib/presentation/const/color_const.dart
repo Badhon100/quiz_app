@@ -6,4 +6,6 @@ class ColorConst {
   static Color blackColor = const Color(0xff000000);
   static Color startButtonColor = const Color(0xffF8C660);
   static Color backGroundColor = const Color.fromARGB(255, 247, 244, 244);
+  static Color greenColor = const Color(0xffF8C660);
+  static Color redColor = const Color(0xffF8C660);
 }

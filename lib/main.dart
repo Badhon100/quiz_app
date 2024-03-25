@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:quiz_app/data/providers/home_screen_provider.dart';
 import 'package:quiz_app/data/providers/question_answer_provider.dart';
 import 'package:quiz_app/routes/generated_routes.dart';
 
@@ -23,6 +24,8 @@ class MyApp extends StatelessWidget {
           providers: [
             ChangeNotifierProvider(
                 create: (context) => QuestionAnswerProvider()),
+                ChangeNotifierProvider(
+                create: (context) => HomeScreenProvider()),
           ],
           child: MaterialApp(
             title: 'Quiz app',
