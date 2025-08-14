@@ -12,25 +12,27 @@ Supports LaTeX rendering for math/science questions, persistent leaderboard stor
 ---
 
 ## 🚀 Setup Steps
-1. **Clone the repository**
- 1. git clone https://github.com/your-username/flutter_quiz_app.git
- 2. cd flutter_quiz_app
+
+**Clone the repository**
+
+    1. git clone https://github.com/Badhon100/quiz_app.git
+    2. cd flutter_quiz_app
 
 
 Install dependencies
 
- flutter pub get
+    flutter pub get
 
 Run the app
 
-flutter run
+    flutter run
 
 
 Assets
 
 Ensure your quiz questions file exists at:
 
-assets/questions.json
+    assets/questions.json
 
 
 Example JSON structure:
